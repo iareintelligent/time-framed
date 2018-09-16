@@ -5,6 +5,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
 
 const Event = props => {
@@ -13,37 +14,38 @@ const Event = props => {
         <div>
             {props.event ? (
                 <Card>
-                    <Grid container spacing={16}>
-                        <Grid item>
+                    <Grid container spacing={12}>
+                        <Grid
+                            item
+                            container
+                            xs={2}
+                            justify="center"
+                            alignItems="center"
+                        >
                             <ButtonBase>
-                            <CardMedia
-                                style={{ height: 0, paddingTop: "56.25%" }}
-                                // image={props.event.fields..fields.file.url}
-                                title={props.event.fields.whatTitle}
-                            />    
+                                <img alt="test" src="//placehold.it/275x275" width="128" height="128" />
                             </ButtonBase>
                         </Grid>
-                        
-
+                        <Grid item>
+                            <CardContent>
+                                <Typography
+                                    gutterBottom
+                                    variant="headline"
+                                    component="h2"
+                                >
+                                    {props.event.fields.whatTitle}
+                                </Typography>
+                                <Typography component="p">
+                                    {props.event.fields.whatContent}
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small" color="primary" href={"#"}>
+                                    Oh god please don't click here
+                                </Button>
+                            </CardActions>
+                        </Grid>
                     </Grid>
-                    
-                    <CardContent>
-                        <Typography
-                            gutterBottom
-                            variant="headline"
-                            component="h2"
-                        >
-                            {props.event.fields.whatTitle}
-                        </Typography>
-                        <Typography component="p">
-                            {props.event.fields.whatContent}
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" color="primary" href={"#"}>
-                            Oh god please don't click here
-                        </Button>
-                    </CardActions>
                 </Card>
             ) : null}
         </div>
