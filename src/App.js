@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import TimelineDashboardPage from "./components/TimelineDashboardPage";
 
 function App(props) {
-    const { classes } = props;
     return (
         <React.Fragment>
             <CssBaseline>
@@ -14,4 +13,5 @@ function App(props) {
         </React.Fragment>
     );
 }
+
 export default App;

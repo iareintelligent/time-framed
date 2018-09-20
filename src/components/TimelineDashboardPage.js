@@ -13,7 +13,8 @@ const styles = {
             "linear-gradient(to right, #93FDFE 1px, transparent 1px), linear-gradient(to bottom, #93FDFE 1px, transparent 1px)",
         padding: "1rem",
         minWidth: "100%",
-        minHeight: "100%"
+        maxHeight: "90vh",
+        overflow: "scroll"
     }
 };
 
