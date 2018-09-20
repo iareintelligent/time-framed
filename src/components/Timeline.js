@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import List from "@material-ui/core/List";
-import IconButton from "@material-ui/core/IconButton";
+import ListItem from "@material-ui/core/ListItem";
 import TextField from "@material-ui/core/TextField";
 import * as contentful from "contentful";
 import Event from "./Event";
@@ -52,7 +52,7 @@ class TimelineEvents extends Component {
     };
     render() {
         return (
-            <div>
+            <section>
                 {this.state.events ? (
                     <div>
                         <TextField
@@ -62,16 +62,18 @@ class TimelineEvents extends Component {
                             label="Let's look more into..."
                             onChange={this.onSearchInputChange}
                         />
-                        <List cellHeight={200} spacing={1}>
+                        <List spacing={1}>
                             {this.state.events.map(currentEvent => (
-                                <Event event={currentEvent} />
+                                <ListItem>
+                                    <Event event={currentEvent} />
+                                </ListItem>
                             ))}
                         </List>
                     </div>
                 ) : (
                     "No events found"
                 )}
-            </div>
+            </section>
         );
     }
 }

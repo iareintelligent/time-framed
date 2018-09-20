@@ -1,17 +1,17 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Navbar from "./components/Navbar";
-import Timeline from "./components/Timeline";
+import TimelineDashboardPage from "./components/TimelineDashboardPage";
 
-function App() {
+function App(props) {
+    const { classes } = props;
     return (
         <React.Fragment>
             <CssBaseline>
                 <Navbar />
-                <Timeline />
+                <TimelineDashboardPage />
             </CssBaseline>
         </React.Fragment>
     );
 }
-
 export default App;
