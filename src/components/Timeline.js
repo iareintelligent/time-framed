@@ -4,8 +4,6 @@ import DayViewComponent from "./DayViewComponent";
 const Timeline = () => (
     <section>
         <DayViewComponent />
-        <DayViewComponent />
-        <DayViewComponent />
     </section>
 );
 
