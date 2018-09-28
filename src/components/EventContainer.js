@@ -1,21 +1,23 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
+import { connect } from "react-redux";
 import Event from "./Event";
+import selectEvents from "../selectors/events";
 
-export default class EventContainer extends React.Component {
-    render() {
-        return (
-            <Grid item xs={12} container spacing={8} justify="center">
-                <Grid item xs={12}>
-                    <Event />
-                </Grid>
-                <Grid item xs={12}>
-                    <Event />
-                </Grid>
-                <Grid item xs={12}>
-                    <Event />
-                </Grid>
+const EventsList = props => (
+    <React.Fragment>
+        {props.events.map(event => (
+            <Grid item xs={12} key={event.id}>
+                <Event {...event} />
             </Grid>
-        );
-    }
-}
+        ))}
+    </React.Fragment>
+);
+
+const mapStateToProps = state => {
+    return {
+        events: selectEvents(state.events, state.filters)
+    };
+};
+
+export default connect(mapStateToProps)(EventsList);

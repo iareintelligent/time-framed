@@ -10,7 +10,9 @@ export default (events, { text, startDate, endDate }) => {
         const endDateMatch = endDate
             ? endDate.isSameOrAfter(createdAtMoment, "day")
             : true;
-        const textMatch = event.description.toLowerCase().includes(text);
+        const textMatch =
+            event.note.toLowerCase().includes(text) ||
+            event.title.toLowerCase().includes(text);
 
         return startDateMatch && endDateMatch && textMatch;
     });

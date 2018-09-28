@@ -5,7 +5,7 @@ export const addEvent = ({
     id = "",
     timeCreated = "",
     title = "",
-    description = "",
+    note = "",
     tags = [],
     relatedTasks = {
         thisIsBlocking: [],
@@ -23,7 +23,7 @@ export const addEvent = ({
         id: uuid(),
         timeCreated,
         title,
-        description,
+        note,
         tags,
         relatedTasks,
         reminders,
